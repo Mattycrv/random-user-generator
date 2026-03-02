@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 20px
+}
+html {
+    font-size: 10px;
+}
+
+p::first-letter,
+h1::first-letter {
+    text-transform: uppercase;
+}
