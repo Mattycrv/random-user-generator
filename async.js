@@ -7,6 +7,8 @@ const containerDoUsuario = document.createElement("div");
 containerDoUsuario.className = "container__usuario";
 sectionContainer.appendChild(containerDoUsuario);
 
+buscarUsuario();
+
 newUserButton.addEventListener('click', buscarUsuario);
 
 async function buscarUsuario() {
@@ -27,13 +29,13 @@ async function buscarUsuario() {
 function exibirUsuario(data) {
     const user = data.results[0];
     const { name, email, picture } = user;
-    const { title, first, last} = name;
-    const userName = title + " " + first + " " + last;
+    const { first, last} = name;
+    const userName = first + " " + last;
     const { large } = picture;
 
     containerDoUsuario.innerHTML = `
         <img class="user__picture" src="${large}" alt="Foto do usuário">
-        <h1 class="user__name"><span>Nome:</span>${userName}</h1>
-        <h1 class="user__email"><span>E-mail:</span>${email}</h1>
+        <h1 class="user__name">${userName}</h1>
+        <h1 class="user__email"><i class="fa-regular fa-envelope"></i>${email}</h1>
     `;
 }
