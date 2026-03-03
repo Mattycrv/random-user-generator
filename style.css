@@ -9,6 +9,14 @@
     background-color: white;
 }
 
+@media (min-width: 768px) {
+    .container {
+        max-width: 700px;
+        margin: 0 auto;
+        margin-bottom: 40px;
+    }
+}
+
 .container::before {
     content: "";
     display: inline-block;
